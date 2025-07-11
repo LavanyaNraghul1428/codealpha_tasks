@@ -1,0 +1,24 @@
+frames = [
+    ["person", "car"],
+    ["person", "car", "dog"],
+    ["car", "dog"],
+    ["person"],
+]
+
+# Simple tracking dictionary
+object_ids = {}
+next_id = 1
+
+# Process each frame
+for frame_num, objects in enumerate(frames):
+    print(f"\nFrame {frame_num + 1}")
+    current_ids = {}
+
+    for obj in objects:
+        if obj not in object_ids:
+            object_ids[obj] = next_id
+            next_id += 1
+        current_ids[obj] = object_ids[obj]
+
+    for obj, obj_id in current_ids.items():
+        print(f"Detected {obj} with ID {obj_id}")

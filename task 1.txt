@@ -1,0 +1,22 @@
+faqs = {
+    "what is your name": "I am FAQ Bot 👋",
+    "how are you": "I'm good! How can I help you?",
+    "what is python": "Python is a programming language.",
+    "who created python": "Guido van Rossum created Python.",
+    "what can you do": "I can answer your frequently asked questions."
+}
+
+def chatbot():
+    print("👋 Hello! I'm FAQ Chatbot. Type 'bye' to exit.")
+    
+    while True:
+        user_input = input("You: ").lower()
+        if user_input == "bye":
+            print("Bot: Goodbye! 👋")
+            break
+        elif user_input in faqs:
+            print("Bot:", faqs[user_input])
+        else:
+            print("Bot: Sorry, I don't know that. 🤖")
+
+chatbot()
